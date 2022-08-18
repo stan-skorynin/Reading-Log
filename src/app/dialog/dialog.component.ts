@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder, Validator, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-dialog',
@@ -9,11 +9,20 @@ import { FormGroup } from '@angular/forms';
 export class DialogComponent implements OnInit {
 
   statusList = ["Completed", "Reading", "Abandoned"];
-  bookForm = FormGroup;
+  bookForm !: FormGroup;
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.bookForm = this.formBuilder.group({
+      title: ['', Validators.required],
+      genre: ['', Validators.required],
+      status: ['', Validators.required],
+      page: ['', Validators.required],
+      comment: ['', Validators.required],
+      date: ['', Validators.required]
+    })
+
   }
 
 }
