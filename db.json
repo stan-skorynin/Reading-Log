@@ -1,0 +1,32 @@
+{
+  "BookList": [
+    {
+      "title": "1984",
+      "genre": "Sci-Fi",
+      "status": "Reading",
+      "page": 45,
+      "comment": "test",
+      "date": "2022-08-03T04:00:00.000Z",
+      "id": 1
+    },
+    {
+      "title": "Paradise Lost",
+      "genre": "Classics",
+      "status": "Completed",
+      "page": 433,
+      "comment": "Great read",
+      "date": "2022-08-24T04:00:00.000Z",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
