@@ -8,21 +8,18 @@
         <mat-form-field appearance="outline">
             <mat-label>Genre</mat-label>
             <mat-select formControlName="genre" placeholder="Select Genre">
-                <mat-option value="">Classics</mat-option>
-                <mat-option value="">Tragedy</mat-option>
-                <mat-option value="">Sci-Fi</mat-option>
-                <mat-option value="">Fantasy</mat-option>
-                <mat-option value="">Action/Adventure</mat-option>
-                <mat-option value="">Romance</mat-option>
-                <mat-option value="">Crime/Mystery</mat-option>
-                <mat-option value="">Humor/Satire</mat-option>
-                <mat-option value="">Horror/Thiller</mat-option>
-                <mat-option value="">Comic/Graphic Novel</mat-option>
-                <mat-option value="">Biography/Autobiography</mat-option>
-                <mat-option value="">Memoirs</mat-option>
-                <mat-option value="">Cookbooks</mat-option>
-                <mat-option value="">True Stories</mat-option>
-                <mat-option value="">Self Help</mat-option>
+                <mat-option value="Classics">Classics</mat-option>
+                <mat-option value="Tragedy">Tragedy</mat-option>
+                <mat-option value="Sci-Fi">Sci-Fi</mat-option>
+                <mat-option value="Fantasy">Fantasy</mat-option>
+                <mat-option value="Action/Adventure">Action/Adventure</mat-option>
+                <mat-option value="Romance">Romance</mat-option>
+                <mat-option value="Crime/Mystery">Crime/Mystery</mat-option>
+                <mat-option value="Humor/Satire">Humor/Satire</mat-option>
+                <mat-option value="Horror/Thiller">Horror/Thiller</mat-option>
+                <mat-option value="Comic/Graphic Novel">Comic/Graphic Novel</mat-option>
+                <mat-option value="Biography/Autobiography">Biography/Autobiography</mat-option>
+                <mat-option value="Memoir">Memoirs</mat-option>
             </mat-select>
         </mat-form-field>
         <mat-form-field appearance="fill">
@@ -33,13 +30,14 @@
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
         <label for="">
-            <h1>Staus</h1>
-            <mat-radio-group formControlName="status" class="example-radio-group">
-                <mat-radio-button class="example-radio-button" *ngFor="let status of statusList" [value]=status>
-                    {{status}}
-                </mat-radio-button>
-            </mat-radio-group>
+            <h1>Status</h1>
         </label>
+        <mat-radio-group formControlName="status" class="example-radio-group">
+            <mat-radio-button class="example-radio-button" *ngFor="let status of statusList" [value]="status">
+                {{status}}
+            </mat-radio-button>
+        </mat-radio-group>
+
         <mat-form-field appearance="outline">
             <mat-label>Page Bookmarked</mat-label>
             <input formControlName="page" matInput type="number" placeholder="Enter Page">
@@ -52,6 +50,6 @@
 </div>
 
 <div mat-dialog-actions [align]="'end'">
-    <button mat-raised-button color="primary" mat-dialog-close=""> Save</button>
+    <button mat-raised-button color="primary" mat-dialog-close="" (click)="addProduct()"> Save</button>
     <button mat-raised-button color="warn" mat-dialog-close=""> Close</button>
 </div>
